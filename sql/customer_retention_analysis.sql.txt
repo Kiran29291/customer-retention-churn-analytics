@@ -1,0 +1,50 @@
+/*
+Project: Customer Retention & Churn Analytics for E-Commerce
+Database: Olist Brazilian E-Commerce
+
+Purpose:
+Document SQL queries used to analyze customer retention,
+repeat purchasing, inactivity candidates, and RFM segments.
+
+Note:
+Add validated queries using the actual project tables.
+*/
+
+-- Query 1: Customer retention status summary
+-- Purpose: Count customers by churn status and retention segment.
+
+SELECT
+    churn_status,
+    retention_segment,
+    COUNT(DISTINCT customer_unique_id) AS customer_count
+FROM customer_churn
+GROUP BY
+    churn_status,
+    retention_segment
+ORDER BY
+    churn_status,
+    customer_count DESC;
+
+-- Query 2: Overall customer retention status
+-- Purpose: Count customers in each retention status.
+
+SELECT
+    churn_status,
+    COUNT(DISTINCT customer_unique_id) AS customer_count
+FROM customer_churn
+GROUP BY
+    churn_status
+ORDER BY
+    customer_count DESC;
+
+
+-- Query 3: Customer count by RFM segment
+-- Purpose: Summarize the number of customers in each RFM segment.
+SELECT
+    customer_segment,
+    COUNT(DISTINCT customer_unique_id) AS customer_count
+FROM customer_rfm_segments
+GROUP BY
+    customer_segment
+ORDER BY
+    customer_count DESC;
