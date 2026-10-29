@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Customer Retention and Churn Analytics portfolio project using Python, SQL, MySQL and Power BI.">
+  <title>Customer Retention &amp; Churn Analytics</title>
+  <style>
+    :root {
+      --navy: #142b4a;
+      --blue: #2563eb;
+      --teal: #0f766e;
+      --bg: #f1f5f9;
+      --muted: #64748b;
+      --border: #dce4ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: #243247;
+      line-height: 1.65;
+    }
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 54px 20px;
+    }
+    .container { width: min(1050px, 92%); margin: auto; }
+    .eyebrow {
+      color: #93c5fd;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+    h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.15; margin: 12px 0; }
+    header p { max-width: 720px; color: #dbeafe; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .tag {
+      border: 1px solid #64748b;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 13px;
+    }
+    main { padding: 32px 0 50px; }
+    section {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+      margin-bottom: 22px;
+    }
+    h2 { color: var(--navy); margin-top: 0; font-size: 24px; }
+    h3 { color: var(--navy); margin-bottom: 6px; }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .kpi {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 10px;
+    }
+    .kpi strong { display: block; color: var(--blue); font-size: 25px; }
+    .kpi span { color: var(--muted); font-size: 13px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .note {
+      background: #eff6ff;
+      border-left: 4px solid var(--blue);
+      padding: 14px 18px;
+      border-radius: 6px;
+    }
+    li { margin-bottom: 8px; }
+    .button {
+      display: inline-block;
+      background: white;
+      color: var(--navy);
+      padding: 10px 16px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 8px 8px 0 0;
+    }
+    .button.primary { background: var(--blue); color: white; }
+    footer { text-align: center; color: var(--muted); padding: 24px; font-size: 13px; }
+    @media (max-width: 700px) {
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid { grid-template-columns: 1fr; }
+      section { padding: 20px; }
+    }
+    @media (max-width: 380px) {
+      .kpis { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="eyebrow">Data Analytics Portfolio Project</div>
+      <h1>Customer Retention<br>&amp; Churn Analytics</h1>
+      <p>
+        Turning e-commerce customer data into actionable insights about
+        repeat purchasing, customer segments, and inactivity risk.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">DAX</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        This project analyzes the Olist Brazilian e-commerce dataset to
+        understand customer purchasing behavior, repeat purchases, RFM
+        segments, and potential inactivity. Python and Pandas support
+        data preparation, MySQL and SQL support analysis, and Power BI
+        presents the results in an interactive dashboard.
+      </p>
+      <div class="note">
+        <strong>Business objective:</strong> Identify customer groups that
+        may benefit from targeted engagement and repeat-purchase campaigns.
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Metrics</h2>
+      <div class="kpis">
+        <div class="kpi">
+          <strong>93,358</strong>
+          <span>Customers analyzed</span>
+        </div>
+        <div class="kpi">
+          <strong>66,062</strong>
+          <span>Inactivity candidates</span>
+        </div>
+        <div class="kpi">
+          <strong>3.00%</strong>
+          <span>Repeat customer rate</span>
+        </div>
+        <div class="kpi">
+          <strong>R$ 15.42M</strong>
+          <span>Historical payment value</span>
+        </div>
+      </div>
+      <p>
+        The analysis uses a 180-day inactivity rule. Inactivity candidates
+        are not confirmed permanent churn, and historical payment value
+        should not be interpreted as lost revenue.
+      </p>
+    </section>
+
+    <section>
+      <h2>Customer Segmentation</h2>
+      <div class="grid">
+        <div>
+          <h3>High Spenders</h3>
+          <p>37,193 customers — a high historical monetary value segment.</p>
+        </div>
+        <div>
+          <h3>Hibernating One-Time Buyers</h3>
+          <p>22,562 customers — one-time buyers with older purchases.</p>
+        </div>
+        <div>
+          <h3>Recent One-Time Buyers</h3>
+          <p>21,735 customers — potential opportunities to encourage a second purchase.</p>
+        </div>
+        <div>
+          <h3>Needs Nurturing</h3>
+          <p>11,470 customers — a group for relevant follow-up engagement.</p>
+        </div>
+      </div>
+      <p>
+        Smaller segments include At Risk - Repeat Buyers, Champions,
+        Loyal Customers, and one record requiring a missing-monetary review.
+      </p>
+    </section>
+
+    <section>
+      <h2>Tools &amp; Workflow</h2>
+      <ol>
+        <li><strong>Python and Pandas:</strong> Data inspection, cleaning, and customer-level dataset preparation.</li>
+        <li><strong>MySQL and SQL:</strong> Customer retention analysis, RFM reporting, and summary views.</li>
+        <li><strong>Power BI and DAX:</strong> KPI cards, segment comparisons, inactivity rates, and historical payment value.</li>
+        <li><strong>Business interpretation:</strong> Recommendations for customer engagement and repeat purchases.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Business Recommendations</h2>
+      <ul>
+        <li>Test second-purchase campaigns for recent one-time buyers.</li>
+        <li>Evaluate win-back messaging for eligible inactive candidates.</li>
+        <li>Offer relevant loyalty initiatives to repeat and high-value customers.</li>
+        <li>Track campaign results using repeat-purchase rate and customer revenue over time.</li>
+      </ul>
+      <p class="note">
+        These are proposed actions based on historical analysis; campaign
+        effectiveness has not been established by this project alone.
+      </p>
+    </section>
+
+    <section>
+      <h2>Project Deliverables</h2>
+      <p>
+        The repository can contain the Power BI report, SQL scripts,
+        Python analysis, dataset documentation, and project methodology.
+      </p>
+      <p>
+        <a class="button primary" href="#project-overview">Explore project</a>
+        <a class="button" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+      <p style="color:#64748b;font-size:13px">
+        Add links to your actual project files and repository after uploading them.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Customer Retention &amp; Churn Analytics · Data Analytics Portfolio
+  </footer>
+</body>
+</html>
