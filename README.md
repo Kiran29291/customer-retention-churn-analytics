@@ -69,10 +69,15 @@ These segments can help prioritize customer engagement and retention activities.
 
 ## Power BI Dashboard
 
-The dashboard presents customer KPIs, inactivity candidates, historical payment value, and customer segment insights.
+### Dashboard Preview
 
-View the dashboard screenshot on the [project website](https://Kiran29291.github.io/customer-retention-churn-analytics/).
+![Customer Retention Power BI Dashboard](customer-retention-dashboard.png)
 
+### Download Power BI Dashboard
+
+[**Download Customer_Retention_Churn_Analytics.pbix**](powerbi/Customer_Retention_Churn_Analytics.pbix)
+
+Open the downloaded `.pbix` file using Power BI Desktop to explore the interactive dashboard.
 ## Dataset
 
 Source: [Brazilian E-Commerce Public Dataset by Olist on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
