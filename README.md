@@ -92,6 +92,6 @@ The dataset contains historical Brazilian e-commerce orders and related customer
 
 ## Author
 
-Yendluri Kiran Kumar |Data Analytics Portfolio Project
+Yendluri Kiran Kumar | Data Analytics Portfolio Project
 
 **Skills demonstrated:** Python, Pandas, MySQL, SQL, Power BI, DAX, data analysis, customer segmentation, and business insight communication.
